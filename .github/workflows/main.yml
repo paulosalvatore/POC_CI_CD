@@ -1,7 +1,8 @@
 name: Actions 😎
 
 on:
-  push: *
+  push:
+    branches: [*]
   workflow_dispatch: {}
 
 jobs:
