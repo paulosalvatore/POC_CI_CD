@@ -46,9 +46,8 @@ jobs:
       # Unzip Build
       - name: Unzip Build
         run: |
-          7z x Build.zip
-          ls
-          mv WebGL/WebGL WebGL
+          ls build/WebGL/WebGL
+          sudo mv build/WebGL/WebGL WebGL
 
       # Output
       - uses: EndBug/add-and-commit@latest
