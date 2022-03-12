@@ -53,5 +53,5 @@ jobs:
       # Output
       - uses: EndBug/add-and-commit@latest
         with:
-          message: "build: publish new release"
-          add: "Build.zip"
+          message: "build: publish new release ${{ github.ref }}_${{ github.run_number }}"
+          add: "WebGL"
