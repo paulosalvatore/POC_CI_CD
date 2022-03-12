@@ -43,14 +43,12 @@ jobs:
           targetPlatform: WebGL
           allowDirtyBuild: true
 
-      # Unzip Build
-      - name: Unzip Build
-        run: |
-          ls build/WebGL/WebGL
-          sudo mv build/WebGL/WebGL WebGL
+      - name: Display structure of root files
+        run: ls -R
+        working-directory: build/WebGL
 
-      # Output
-      - uses: EndBug/add-and-commit@latest
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
-          message: "build: publish new release ${{ github.ref }}_${{ github.run_number }}"
-          add: "WebGL"
+          branch: gh-pages
+          folder: build/WebGL
