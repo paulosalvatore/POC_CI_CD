@@ -1,8 +1,8 @@
 name: Actions 😎
 
 on:
-  # push:
-  #   branches: ["*"]
+  push:
+    branches: [main]
   workflow_dispatch: {}
 
 jobs:
@@ -45,10 +45,10 @@ jobs:
 
       - name: Display structure of root files
         run: ls -R
-        working-directory: build/WebGL
+        working-directory: build/WebGL/WebGL
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
           branch: gh-pages
-          folder: build/WebGL
+          folder: build/WebGL/WebGL
